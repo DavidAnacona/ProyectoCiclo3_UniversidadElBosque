@@ -15,7 +15,7 @@
 <body>
 	<main>
 		<form action="" class="main--formulario-login"> 
-			<p class="formulario--login-titulo">Iniciar sesion</p>
+			<p class="formulario--login-titulo">Iniciar sesi&oacuten</p>
 			<label for="usuario" class="formulario--login-label">
 				<span>Usuario </span>
 				<input class="formulario--login-campos" id="usuario" type="text" placeholder="Ingresa tu usuario" />

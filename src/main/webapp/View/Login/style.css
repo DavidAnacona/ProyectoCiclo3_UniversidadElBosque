@@ -75,29 +75,28 @@ main .main--formulario-login{
 	height: 3.5rem;
 	border-radius: .8rem;
 	font-size: 1.8rem;
-	border-color: var(--grisclaro);
+	border: none;
 	background-color: var(--grisclaro);
-}
-
-.formulario--login-campos:focus{
-	border-color: var(--gris);
-}
-.formulario--login-campos:active{
-	border-color: var(--gris);
-}
-.main--formulario-login .formulario--login-submit{
-	width: 90%;
-	height: 3.8rem;
-	margin-top: 2rem;
-	border-radius: 1.3rem;
-	font-size: 2rem;
-	border-color: var(--grisclaro);
-	background-color: #A9D0F5;
 }
 .main--formulario-login .formulario--login-campos::-webkit-input-placeholder{
 	text-align: center;
 	opacity: 80%;
 	font-size: 1.5rem;
+}
+.main--formulario-login .formulario--login-submit{
+	width: 90%;
+	height: 3.8rem;
+	margin-top: 1.2rem;
+	border-radius: 1.3rem;
+	font-size: 2rem;
+	border: none;
+	color: var(--blanco);
+	background-color: #8D3495;
+	transition: all 1.5s;
+}
+.main--formulario-login .formulario--login-submit:hover {
+	background-color: var(--blanco);
+	color: rgba(0, 0 , 1);
 }
 
 footer{
