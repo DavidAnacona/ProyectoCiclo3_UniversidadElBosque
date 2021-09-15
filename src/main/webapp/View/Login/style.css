@@ -23,7 +23,7 @@ body{
 	min-height: 100vh;
 	display: flex;
 	flex-wrap: wrap;
-	background-image: url('https://media.pasionmovil.com/2020/04/9a181002-ciudades-mas-grandes-pobladas-mundo-tokio-.jpg') ;
+	background-image: url('https://i.imgur.com/jiDVAiE.jpg');
 	background-repeat: no-repeat;
 	background-position: center center;
 	background-attachment: fixed;
@@ -96,7 +96,7 @@ main .main--formulario-login{
 }
 .main--formulario-login .formulario--login-submit:hover {
 	background-color: var(--blanco);
-	color: rgba(0, 0 , 1);
+	color: var(--oscuro);
 }
 
 footer{
