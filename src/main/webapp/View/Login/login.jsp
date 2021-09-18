@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+<%@ page import="validacion.validacionLogin" %>
 <!DOCTYPE html>
 <html lang="es">
 <head>
@@ -14,18 +16,18 @@
 </head>
 <body>
 	<main>
-		<form action="" class="main--formulario-login"> 
+		<form action="${pageContext.request.contextPath}/validacionLogin" method="post" class="main--formulario-login"> 
 			<p class="formulario--login-titulo">Iniciar sesi&oacuten</p>
 			<label for="usuario" class="formulario--login-label">
 				<span>Usuario </span>
-				<input class="formulario--login-campos" id="usuario" type="text" placeholder="Ingresa tu usuario" />
+				<input class="formulario--login-campos" name="usuario" id="usuario" type="text" placeholder="Ingresa tu usuario" />
 			</label>
 			
 			<label for="password" class="formulario--login-label">
 				<span>Password </span>
-				<input class="formulario--login-campos" id="password" type="password" placeholder="Ingresa tu contraseña"/>
+				<input class="formulario--login-campos" name="password" id="password" type="password" placeholder="Ingresa tu contraseña"/>
 			</label>
-			<input class="formulario--login-submit" type="submit" value="Ingresar" />
+			<input class="formulario--login-submit" name="button" id="button" type="submit" value="Ingresar" />
 		</form>
 	</main>
 	
