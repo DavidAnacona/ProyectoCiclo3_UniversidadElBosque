@@ -12,7 +12,9 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Krub:wght@400;700&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="style.css">
+	<style type="text/css">
+	<%@ include file="style.css" %>
+	</style>
 </head>
 <body>
 	<main>
