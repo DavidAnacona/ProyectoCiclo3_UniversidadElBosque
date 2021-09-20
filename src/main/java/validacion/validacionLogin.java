@@ -25,18 +25,19 @@ public class validacionLogin extends HttpServlet {
 	}
 
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		
 		String usuario = String.valueOf(request.getParameter("usuario")).trim();
 		String password = String.valueOf(request.getParameter("password")).trim();
 
 		String url = null;
 
+		
 		if (usuario.equals("admin") && password.equals("admin123")) {
 			url = "/View/menu/menu.jsp";
 		} else {
 			url = "/View/Login/login.jsp";
 		}
 		request.getRequestDispatcher(url).forward(request, response);
-
 	}
 
 }
