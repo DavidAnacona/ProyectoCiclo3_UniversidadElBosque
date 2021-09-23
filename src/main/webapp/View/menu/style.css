@@ -40,7 +40,6 @@ header .header--section-principal{
 	height: 6rem;
 	display: flex;
 	flex-direction: row;
-	z-index: 1;
 	background-color: var(--oscuro);
 }
 header .header--logo{
@@ -74,7 +73,6 @@ header .header--menu{
 header .header--menu a{
 	width: 20rem;
 	height: 3rem;
-	margin-bottom: 1rem;
 	margin-left: 3rem;
 	color: var(--blanco);
 	background-color:  #8D3495;
@@ -97,10 +95,7 @@ header .header--menu a:hover{
 header .header--section-opciones{
 	width: 100vw;
 	height: 4rem;
-	position: absolute;
 	background-color: var(--gris);
-	border-radius: .8rem;
-	transform: translatey(50%);
 }
 
 .header--section-opciones .header--opciones-nav{
@@ -117,13 +112,5 @@ header .header--section-opciones{
 	text-decoration: none;
 	font-size: 2rem;
 	color: var(--blanco);
-}
-
-.header--section-principal:hover{
-	z-index: 0;
-}
-.header--section-principal:hover .header--section-opciones{
-	transform: translatey(200%);
-	z-index: 1;
 }
 

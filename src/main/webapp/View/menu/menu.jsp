@@ -1,8 +1,11 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
 <head>
+	<meta charset="UTF-8">
+	<title>Tienda generica</title>
 	<style type="text/css">
 	<%@ include file="style.css" %>
 	</style>
@@ -15,12 +18,12 @@
 			</a>
 			<h1 class="header--title">Tienda generica</h1>
 			<nav class="header--menu">
-					<a class="header--menu-inicio" href="../Login/login.jsp">Cerrar sesi&oacuten</a>
+					<a class="header--menu-inicio" href="../../View/Login/login.jsp">Cerrar sesi&oacuten</a>
 			</nav>
 		</section>
 		<section class="header--section-opciones">
 			<nav class="header--opciones-nav">
-				<a class="header--opcion-item" href="">Usuarios</a>
+				<a class="header--opcion-item" href="..../../View/usuario/usuario.jsp">Usuarios</a>
 				<a class="header--opcion-item" href="">Clientes</a>
 				<a class="header--opcion-item" href="">Proveedores</a>
 				<a class="header--opcion-item" href="">Productos</a>
@@ -29,5 +32,9 @@
 			</nav>
 		</section>
 	</header>
+	
+	<footer>
+		
+	</footer>
 </body>
 </html>

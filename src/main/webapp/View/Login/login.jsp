@@ -20,6 +20,7 @@
 	<main>
 		<form action="${pageContext.request.contextPath}/validacionLogin" method="post" class="main--formulario-login"> 
 			<p class="formulario--login-titulo">Iniciar sesi&oacuten</p>
+			
 			<label for="usuario" class="formulario--login-label">
 				<span>Usuario </span>
 				<input class="formulario--login-campos" name="usuario" id="usuario" type="text" placeholder="Ingresa tu usuario" />
@@ -32,7 +33,6 @@
 			<input class="formulario--login-submit" name="button" id="button" type="submit" value="Ingresar" />
 		</form>
 	</main>
-	
 	<footer>
 		<p>Todos los derechos reservados Grupo 1.1 Universidad El Bosque</p>
 	</footer>
