@@ -21,11 +21,13 @@ html{
 main{
 	display:flex;
 	flex-direction: row;
-	margin-top: 2px;
+	
 }
 main .main--formulario-registro{
 	width: 30%;
-	height: 59rem;
+	height: 55rem;
+	margin-top: 5rem;
+	margin-left: -2rem;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -63,7 +65,7 @@ main .main--formulario-registro h2{
 }
 .formulario--registro-label .formulario--registro-campo::-webkit-input-placeholder{
 	text-align: center;
-	opacity: 70%;
+	opacity: 90%;
 	font-size: 1.3rem;
 }
 .formulario--registro-campo:focus{
@@ -79,7 +81,7 @@ main .main--formulario-registro h2{
 	font-size: 2rem;
 	border: none;
 	color: var(--blanco);
-	background-color: #8D3495;
+	background-color: #2E9AFE;
 	transition: all 2s;
 }
 .formulario--registro-form .formulario--registro-submit:hover{
@@ -90,4 +92,127 @@ main .main--formulario-registro h2{
 main .main--view--usuarios{
 	width: 70%;
 	height: 59rem;
+	margin-top:2rem;
+}
+main .main--view-consultas{
+	width: 100%;
+	height: 5rem;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+.main--view-consultas .main--tipo-consulta{
+	width: 22rem;
+	height: 2.5rem;
+	border-radius: .5rem;
+	border: 1px solid var(--gris);
+}
+.main--view-consultas .main--consulta-campo{
+	width: 24rem;
+	height: 2.5rem;
+	margin: 0 .5rem;
+	text-align: center;
+	border-radius: .5rem;
+	border: 1px solid var(--gris);
+}
+.main--view-consultas .main--consulta-campo::-webkit-input-placeholder{
+	text-align: center;
+	opacity: 90%;
+	font-size: 1.3rem;
+}
+.main--view-consultas .main--consulta-campo:hover{
+	border-color: rgb(255,144,0);
+	box-shadow: 0 1px 1px rgba(229, 103, 23, 0.075)inset, 0 0 8px rgba(255,144,0,0.6);
+	outline: 0 none;
+}
+.main--view-consultas .main--consulta-submit{
+	width: 15rem;
+	height: 2.5rem;
+	border-radius: .5rem;
+	border: 1px solid var(--gris);
+	color: var(--blanco);
+	font-size: 1.5rem;
+	font-weight: bold;
+	background-color: #2E9AFE;
+	cursor: pointer;
+}
+main .main--lista-usuarios{
+	width: 97%;
+	height: 52rem;
+	margin-top: 1rem;
+	border-radius: 1rem;
+	border: 1px solid #BDBDBD;
+}
+.main--lista-usuarios p{
+	text-align: center;
+	font-size: 2rem;
+	font-weight: bold;
+	margin: 1rem;
+}
+.main--lista-usuarios .main--lista-table{
+	width: 100%;
+	border-collapse: collapse;
+}
+.main--lista-usuarios th,td{
+	padding: 15px;
+
+}
+.main--lista-usuarios td{
+	text-align: center;
+	font-size: 1.5rem;
+}
+.main--lista-usuarios thead{
+	background-color: #246355;
+	color: white;
+	border-bottom: solid 3px #0F362D;
+}
+.main--lista-usuarios thead th{
+	width: 20%;
+	margin: 0;
+	padding: 0;
+	height: 6rem;
+	font-size: 1.8rem;
+}
+.main--lista-usuarios tr:nth-child(even){
+	background-color: #ddd;
+}
+.main--lista-usuarios tr:hover td{
+	background-color: #B3F1AF;
+	color: write;
+}
+.main--lista-usuarios .main--lista-botones{
+	display:flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+}
+.main--lista-table .main--lista-boton1{
+	height: 2.5rem;
+	color: var(--blanco);
+	border: none;
+	border-radius: .5rem;
+	background-color: #E61919;
+	margin-bottom: .3rem;
+	cursor: pointer;
+}
+.main--lista-table .main--lista-boton2{
+	height: 2.5rem;
+	color: var(--blanco);
+	border: none;
+	border-radius: .5rem;
+	background-color: #04B404;
+	cursor: pointer;
+}
+footer{
+	margin-top: 34px;
+	width: 100%;
+	height: 36.5px;
+	color: #000;
+	align-self: flex-end;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	color: var(--blanco);
+	font-size: 1.8rem;
+	background-color: rgba(0, 0, 1);
 }

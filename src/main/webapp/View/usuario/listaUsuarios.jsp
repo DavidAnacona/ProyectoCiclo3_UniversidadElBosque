@@ -3,6 +3,7 @@
 <!DOCTYPE html>
 <%@ page import='co.edu.unbosque.frontend.Usuarios' %>
 <%@ page import='java.util.ArrayList' %>
+<%@ page import='co.edu.unbosque.frontend.TestJSON' %>
 <html>
 <head>
 <meta charset="UTF-8">
@@ -19,7 +20,8 @@
 			<td><label>Password</label></td>
 		</tr>
 		<%
-		ArrayList<Usuarios> lista = (ArrayList<Usuarios>) request.getAttribute("lista");
+		ArrayList<Usuarios> lista = TestJSON.getJSON();
+		/*ArrayList<Usuarios> lista = (ArrayList<Usuarios>) request.getAttribute("lista");*/
 		for (Usuarios usuario:lista){
 		%>
 		<tr>

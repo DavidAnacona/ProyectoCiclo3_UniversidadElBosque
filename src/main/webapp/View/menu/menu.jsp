@@ -23,7 +23,7 @@
 		</section>
 		<section class="header--section-opciones">
 			<nav class="header--opciones-nav">
-				<a class="header--opcion-item" href="..../../View/usuario/usuario.jsp">Usuarios</a>
+				<a class="header--opcion-item" href="../usuario/usuario.jsp">Usuarios</a>
 				<a class="header--opcion-item" href="">Clientes</a>
 				<a class="header--opcion-item" href="">Proveedores</a>
 				<a class="header--opcion-item" href="">Productos</a>

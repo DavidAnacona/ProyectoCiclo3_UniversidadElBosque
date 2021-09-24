@@ -39,11 +39,8 @@ public class validacionLogin extends HttpServlet {
 		if(agregar != null) {
 			agregarUsuario(request, response);
 		}
-		if(listar != null) {
-			listarUsuarios(request, response);
-		}
 	}
-	public void agregarUsuario(HttpServletRequest request, HttpServletResponse response) {
+	public void agregarUsuario(HttpServletRequest request, HttpServletResponse response) throws ServletException {
 		encrypt encryptar = new encrypt();
 		Usuarios usuario = new Usuarios();
 		usuario.setCedula_usuario(Long.parseLong(request.getParameter("cedula")));
@@ -62,7 +59,7 @@ public class validacionLogin extends HttpServlet {
 			respuesta = TestJSON.postJSON(usuario);
 			PrintWriter writer = response.getWriter();
 			if (respuesta == 200) {
-				writer.println("Usuario registrado");
+				request.getRequestDispatcher("/View/usuario/usuario.jsp").forward(request, response);
 			}else writer.println("Error: "+respuesta);
 			writer.close();
 		}catch (IOException e) {
@@ -72,10 +69,7 @@ public class validacionLogin extends HttpServlet {
 	public void listarUsuarios(HttpServletRequest request, HttpServletResponse response) {
 		try {
 			ArrayList<Usuarios> lista = TestJSON.getJSON();
-			String pagina = "/resultado.jsp";
 			request.setAttribute("lista", lista);
-			RequestDispatcher dispatcher = getServletContext().getRequestDispatcher(pagina);
-			dispatcher.forward(request, response);
 		}catch (Exception e) {
 			e.printStackTrace();
 		}
