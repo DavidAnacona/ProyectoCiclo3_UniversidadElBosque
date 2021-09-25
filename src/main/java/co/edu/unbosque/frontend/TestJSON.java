@@ -91,4 +91,24 @@ public class TestJSON {
 		http.disconnect();
 		return respuesta;
 	}
+	public static int eliminarUsuario(Long id) throws IOException {
+		url = new URL(sitio+"usuarios/eliminar");
+		HttpURLConnection http;
+		http= (HttpURLConnection) url.openConnection();
+		try {
+			http.setRequestMethod("POST");
+		}catch(ProtocolException e) {
+			e.printStackTrace();
+		}
+		http.setDoOutput(true);
+		http.setRequestProperty("Accept", "aplication/json");
+		http.setRequestProperty("Content-type", "application/json");
+		String data = "{"+"\"cedula_usuario\":\""+ id+ "\"}"; 
+		byte[] out = data.getBytes(StandardCharsets.UTF_8);
+		OutputStream stream = http.getOutputStream();
+		stream.write(out);
+		int respuesta = http.getResponseCode();
+		http.disconnect();
+		return respuesta;		
+	}
 }
