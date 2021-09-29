@@ -80,15 +80,17 @@
 						ArrayList<Usuarios> lista = TestJSON.getJSON();
 						for (Usuarios usuario : lista) {
 						%>
-						<tr class="main--table-tr">
-							<td><%=usuario.getCedula_usuario()%></td>
-							<td><%=usuario.getNombre_usuario()%></td>
-							<td><%=usuario.getEmail_usuario()%></td>
-							<td><%=usuario.getUsuario()%></td>
-							<td class="main--lista-botones">
-							<a class="main--lista-boton1" href="<%= request.getContextPath()+"/ServletUsuario"%>" type="submit" name="Eliminar">Eliminar</a> 
-							<a class="main--lista-boton2" href="<%= request.getContextPath()+"/ServletUsuario"%>" type="submit" name="Actualizar" >Modificar</a>
-						</tr>
+							<tr class="main--table-tr">
+								<td id="cedula"><%=usuario.getCedula_usuario()%></td>
+								<td contenteditable='true'><%=usuario.getNombre_usuario()%></td>
+								<td contenteditable='true'><%=usuario.getEmail_usuario()%></td>
+								<td contenteditable='true'><%=usuario.getUsuario()%></td>
+								<td class="main--lista-botones">
+								<a class="main--lista-boton1" href="<%= request.getContextPath()+"/ServletUsuario"%>?cedula=<%=usuario.getCedula_usuario()%>" type="submit" id="Eliminar">Eliminar</a>
+								<a class="main--lista-boton2" href="<%= request.getContextPath()+"/ServletUsuario"%>?cedula=<%=usuario.getCedula_usuario()%>?nombre=<%=usuario.getNombre_usuario()%>?correo=<%=usuario.getEmail_usuario()%>?usuario=<%=usuario.getUsuario()%>" type="submit" id="Modificar" >Modificar</a>
+								</td>
+						
+							</tr>
 						<%
 						}
 						%>

@@ -14,6 +14,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.swing.JOptionPane;
 
 import co.edu.unbosque.frontend.TestJSON;
 import co.edu.unbosque.frontend.Usuarios;
@@ -28,12 +29,29 @@ public class ServletUsuario extends HttpServlet {
         super();
         
     }
-
-	
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.getWriter().append("Served at: ").append(request.getContextPath());
+		eliminarUsuario(request, response);
 	}
-	
+	public void eliminarUsuario(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+		Long cedula_usuario = Long.parseLong(request.getParameter("cedula"));
+		Usuarios usuario = new Usuarios();
+		usuario.setCedula_usuario(cedula_usuario);
+		int respuesta = TestJSON.eliminarUsuario(usuario);
+		PrintWriter out = response.getWriter();
+		if (respuesta == 200) {
+			request.getRequestDispatcher("/View/usuario/usuario.jsp").forward(request, response);
+		}else out.println(" Error "+respuesta);
+		out.close();
+	}
+	public void actualizarUsuario(HttpServletRequest request, HttpServletResponse response) {
+		Usuarios usuario = new Usuarios();
+		usuario.setCedula_usuario( Long.parseLong(request.getParameter("cedula")));
+		usuario.setNombre_usuario(request.getParameter("nombre"));
+		usuario.setEmail_usuario(request.getParameter("correo"));
+		usuario.setUsuario(request.getParameter("usuario"));
+		
+	}
 	public void agregarUsuario(HttpServletRequest request, HttpServletResponse response) throws ServletException {
 		encrypt encryptar = new encrypt();
 		Usuarios usuario = new Usuarios();
@@ -45,7 +63,6 @@ public class ServletUsuario extends HttpServlet {
 			usuario.setPassword(encryptar.passEncrypt(request.getParameter("password")));
 		} catch (InvalidKeyException | NoSuchAlgorithmException | NoSuchPaddingException | IllegalBlockSizeException
 				| BadPaddingException e1) {
-			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
 		int respuesta = 0;
@@ -71,13 +88,8 @@ public class ServletUsuario extends HttpServlet {
 	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		String agregar = request.getParameter("Agregar");
-		String eliminar = request.getParameter("Eliminar");
 		if(agregar != null) {
 			agregarUsuario(request, response);
 		}
-		if(eliminar != null) {
-			
-		}
 	}
-
 }

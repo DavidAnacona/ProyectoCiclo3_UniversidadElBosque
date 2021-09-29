@@ -23,7 +23,6 @@ public class validacionLogin extends HttpServlet {
 			throws ServletException, IOException {
 		response.getWriter().append("Served at: ").append(request.getContextPath());
 	}
-
 	public void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
 		String usuario = String.valueOf(request.getParameter("usuario")).trim();
