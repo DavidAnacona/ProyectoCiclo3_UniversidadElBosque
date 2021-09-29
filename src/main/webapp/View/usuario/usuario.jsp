@@ -9,8 +9,6 @@
 <head>
 <meta charset="UTF-8">
 <title>Tienda generica</title>
-<link rel="preload" href="normalize.css" as="style">
-<link rel="stylesheet" href="normalize.css">
 <style type="text/css">
 <%@ include file="style.css"%>
 </style>
@@ -88,8 +86,8 @@
 								<td contenteditable='true'><%=usuario.getEmail_usuario()%></td>
 								<td contenteditable='true'><%=usuario.getUsuario()%></td>
 								<td class="main--lista-botones">
-								<a class="main--lista-boton1" href="<%= request.getContextPath()+"/ServletUsuario"%>?cedula=<%=usuario.getCedula_usuario()%>" type="submit" id="Eliminar">Eliminar</a>
-								<a class="main--lista-boton2" href="<%= request.getContextPath()+"/ServletUsuario"%>?cedula=<%=usuario.getCedula_usuario()%>?nombre=<%=usuario.getNombre_usuario()%>?correo=<%=usuario.getEmail_usuario()%>?usuario=<%=usuario.getUsuario()%>" type="submit" id="Modificar" >Modificar</a>
+								<a class="main--lista-boton1" href="<%= request.getContextPath()+"/ServletUsuario"%>?Eliminar=True?cedula=<%=usuario.getCedula_usuario()%>" type="submit" id="Eliminar">Eliminar</a>
+								<a class="main--lista-boton2" href="<%= request.getContextPath()+"/ServletUsuario"%>?Modificar=True?cedula=<%=usuario.getCedula_usuario()%>?nombre=<%=usuario.getNombre_usuario()%>?correo=<%=usuario.getEmail_usuario()%>?usuario=<%=usuario.getUsuario()%>" type="submit" name="Modificar" id="Modificar" >Modificar</a>
 								</td>
 						
 							</tr>

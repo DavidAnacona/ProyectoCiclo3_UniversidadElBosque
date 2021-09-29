@@ -6,8 +6,6 @@
 <head>
 	<meta charset="UTF-8">
 	<title>Tienda generica</title>
-	<link rel="preload" href="normalize.css" as="style">
-	<link rel="stylesheet" href="normalize.css">
 	<style type="text/css">
 	<%@ include file="style.css" %>
 	</style>
@@ -35,8 +33,5 @@
 		</section>
 	</header>
 	
-	<footer>
-		
-	</footer>
 </body>
 </html>

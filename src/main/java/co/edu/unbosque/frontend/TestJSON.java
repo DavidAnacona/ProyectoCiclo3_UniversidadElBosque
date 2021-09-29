@@ -105,4 +105,16 @@ public class TestJSON {
 		http.disconnect();
 		return respuesta;
 	}
+	public static int actualizarUsuario(Usuarios usuario) throws IOException{
+		url = new URL(sitio+"usuarios/actualizar");
+		HttpURLConnection http;
+		http = (HttpURLConnection)url.openConnection();
+		http.setRequestMethod("POST");
+		http.setDoOutput(true);
+		http.setRequestProperty("Accept", "application/json");
+		http.setRequestProperty("Content-Type", "application/json");
+		int respuesta = http.getResponseCode();
+		http.disconnect();
+		return respuesta;
+	}
 }

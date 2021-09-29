@@ -31,12 +31,22 @@ public class ServletUsuario extends HttpServlet {
     }
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.getWriter().append("Served at: ").append(request.getContextPath());
-		eliminarUsuario(request, response);
+		/*eliminarUsuario(request, response);*/
+		String modificar = request.getParameter("Modificar");
+		String eliminar = request.getParameter("Eliminar");
+		PrintWriter out = response.getWriter();
+		if(eliminar != null) {
+			eliminarUsuario(request, response);
+		}
+		if(modificar != null) {
+			actualizarUsuario(request, response);
+		}
+		out.println("Modificar: "+modificar+" Eliminar: "+eliminar);
+		/*actualizarUsuario(request, response);*/
 	}
 	public void eliminarUsuario(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		Long cedula_usuario = Long.parseLong(request.getParameter("cedula"));
 		Usuarios usuario = new Usuarios();
-		usuario.setCedula_usuario(cedula_usuario);
+		usuario.setCedula_usuario(Long.parseLong(request.getParameter("cedula")));
 		int respuesta = TestJSON.eliminarUsuario(usuario);
 		PrintWriter out = response.getWriter();
 		if (respuesta == 200) {
@@ -44,12 +54,17 @@ public class ServletUsuario extends HttpServlet {
 		}else out.println(" Error "+respuesta);
 		out.close();
 	}
-	public void actualizarUsuario(HttpServletRequest request, HttpServletResponse response) {
+	public void actualizarUsuario(HttpServletRequest request, HttpServletResponse response) throws IOException {
 		Usuarios usuario = new Usuarios();
-		usuario.setCedula_usuario( Long.parseLong(request.getParameter("cedula")));
+		String parametros = request.getParameter("nombre");
+		/*usuario.setCedula_usuario( Long.parseLong(request.getParameter("cedula")));
 		usuario.setNombre_usuario(request.getParameter("nombre"));
 		usuario.setEmail_usuario(request.getParameter("correo"));
 		usuario.setUsuario(request.getParameter("usuario"));
+		
+		int respuesta = TestJSON.actualizarUsuario(usuario);*/
+		PrintWriter out = response.getWriter();
+		out.println("Parametros: "+parametros);
 		
 	}
 	public void agregarUsuario(HttpServletRequest request, HttpServletResponse response) throws ServletException {
